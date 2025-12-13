@@ -28,7 +28,7 @@ export default function Estaciones() {
                 image={heroImg}
             />
 
-            <div className="section-container section-padding -mt-20 relative z-20">
+            <div className="section-container section-padding">
                 {/* Search & Filters Card */}
                 <div className="bg-white p-6 rounded-2xl shadow-xl border border-gray-100 mb-8 flex flex-col md:flex-row gap-4 items-center">
                     <div className="relative flex-grow w-full md:w-auto">

@@ -16,7 +16,7 @@ export default function Promociones() {
                 image={heroImg}
             />
 
-            <div className="section-container section-padding -mt-20 relative z-20">
+            <div className="section-container section-padding">
                 {/* Featured Promo (if any, or just header) - Skipping for grid focus */}
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

@@ -15,7 +15,7 @@ export default function Contacto() {
                 image={heroImg}
             />
 
-            <div className="section-container section-padding -mt-20 relative z-20">
+            <div className="section-container section-padding">
                 <div className="grid lg:grid-cols-3 gap-8">
                     {/* Info Card Block - Floating */}
                     <div className="lg:col-span-1 space-y-6">
