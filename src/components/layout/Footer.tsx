@@ -1,6 +1,24 @@
 import { Link } from "react-router-dom";
-import { MapPin, Phone, Mail, Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
+import { MapPin, Phone, Mail, Facebook, Instagram, Linkedin } from "lucide-react";
 import logo from "@/assets/logo-petroamerica.png";
+
+// Custom TikTok Icon since it's not in lucide-react
+const TiktokIcon = ({ className }: { className?: string }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+  >
+    <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
+  </svg>
+);
 
 const quickLinks = [
   { label: "Nosotros", href: "/nosotros" },
@@ -18,10 +36,10 @@ const legalLinks = [
 ];
 
 const socialLinks = [
-  { icon: Facebook, href: "#", label: "Facebook" },
-  { icon: Instagram, href: "#", label: "Instagram" },
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
-  { icon: Twitter, href: "#", label: "Twitter" },
+  { icon: Facebook, href: "https://www.facebook.com/petroamericaperu/?locale=es_LA", label: "Facebook" },
+  { icon: Instagram, href: "https://www.instagram.com/petroamericaperu/?hl=es", label: "Instagram" },
+  { icon: Linkedin, href: "https://www.linkedin.com/company/petro-america/?originalSubdomain=pe", label: "LinkedIn" },
+  { icon: TiktokIcon, href: "https://www.tiktok.com/@petroamericaperu", label: "TikTok" },
 ];
 
 export function Footer() {
