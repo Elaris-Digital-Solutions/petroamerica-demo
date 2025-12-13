@@ -1,0 +1,122 @@
+import { useState } from "react";
+import { PageLayout } from "@/components/layout/PageLayout";
+import { PageHero } from "@/components/layout/PageHero";
+import { MapPin, Search, Navigation, Filter } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Badge } from "@/components/ui/badge";
+import { stations } from "@/data/stations";
+import heroImg from "@/assets/hero-station.jpg";
+
+export default function Estaciones() {
+    const [searchTerm, setSearchTerm] = useState("");
+    const [selectedRegion, setSelectedRegion] = useState("all");
+
+    const filteredStations = stations.filter(station => {
+        const matchesSearch = station.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            station.address.toLowerCase().includes(searchTerm.toLowerCase());
+        const matchesRegion = selectedRegion === "all" || station.region === selectedRegion;
+        return matchesSearch && matchesRegion;
+    });
+
+    return (
+        <PageLayout headerVariant="transparent">
+            <PageHero
+                title="Red de Estaciones"
+                subtitle="Encuentra tu estación Petroamérica más cercana y disfruta de combustibles de calidad y servicios complementarios."
+                image={heroImg}
+            />
+
+            <div className="section-container section-padding -mt-20 relative z-20">
+                {/* Search & Filters Card */}
+                <div className="bg-white p-6 rounded-2xl shadow-xl border border-gray-100 mb-8 flex flex-col md:flex-row gap-4 items-center">
+                    <div className="relative flex-grow w-full md:w-auto">
+                        <Search className="absolute left-4 top-3.5 h-5 w-5 text-gray-400" />
+                        <Input
+                            placeholder="Buscar por nombre o dirección..."
+                            className="pl-12 h-12 bg-gray-50 border-gray-200 focus:bg-white text-base rounded-xl"
+                            value={searchTerm}
+                            onChange={(e) => setSearchTerm(e.target.value)}
+                        />
+                    </div>
+                    <div className="w-full md:w-[240px] shrink-0">
+                        <Select value={selectedRegion} onValueChange={setSelectedRegion}>
+                            <SelectTrigger className="h-12 bg-gray-50 border-gray-200 focus:bg-white rounded-xl">
+                                <div className="flex items-center gap-2 text-muted-foreground">
+                                    <Filter size={18} />
+                                    <SelectValue placeholder="Región" />
+                                </div>
+                            </SelectTrigger>
+                            <SelectContent>
+                                <SelectItem value="all">Todas las regiones</SelectItem>
+                                <SelectItem value="Lima">Lima</SelectItem>
+                                <SelectItem value="Arequipa">Arequipa</SelectItem>
+                                <SelectItem value="La Libertad">La Libertad</SelectItem>
+                            </SelectContent>
+                        </Select>
+                    </div>
+                </div>
+
+                <div className="grid lg:grid-cols-3 gap-8 lg:h-[700px]">
+                    {/* Station List */}
+                    <div className="lg:col-span-1 overflow-y-auto pr-2 space-y-4 h-full custom-scrollbar bg-white/50 rounded-2xl p-2 border border-blue-50/50">
+                        {filteredStations.map((station) => (
+                            <div
+                                key={station.id}
+                                className="bg-white p-5 rounded-xl border border-gray-100 hover:border-secondary hover:shadow-md transition-all cursor-pointer group"
+                            >
+                                <div className="flex justify-between items-start mb-3">
+                                    <h3 className="font-bold text-corporate-navy group-hover:text-secondary text-lg transition-colors">{station.name}</h3>
+                                    {station.status === 'open' ? (
+                                        <Badge variant="outline" className="text-emerald-600 border-emerald-200 bg-emerald-50 px-2 py-0.5">Abierto</Badge>
+                                    ) : (
+                                        <Badge variant="outline" className="text-orange-600 border-orange-200 bg-orange-50 px-2 py-0.5">Mantenimiento</Badge>
+                                    )}
+                                </div>
+                                <div className="flex items-start gap-2.5 text-sm text-muted-foreground mb-4">
+                                    <MapPin size={16} className="mt-0.5 shrink-0 text-gray-400 group-hover:text-secondary transition-colors" />
+                                    <span className="leading-snug">{station.address}</span>
+                                </div>
+                                <div className="flex flex-wrap gap-2 mb-4">
+                                    {station.services.map(service => (
+                                        <Badge key={service} variant="secondary" className="text-xs font-medium bg-slate-100 text-slate-600 hover:bg-slate-200 border-0">
+                                            {service}
+                                        </Badge>
+                                    ))}
+                                </div>
+                                <Button variant="outline" size="sm" className="w-full text-xs h-9 font-semibold border-corporate-blue/20 text-corporate-blue hover:bg-corporate-blue hover:text-white transition-all">
+                                    <Navigation size={14} className="mr-2" />
+                                    Cómo llegar
+                                </Button>
+                            </div>
+                        ))}
+                        {filteredStations.length === 0 && (
+                            <div className="text-center py-12 text-muted-foreground bg-white rounded-xl border border-dashed border-gray-200">
+                                <MapPin size={48} className="mx-auto text-gray-200 mb-3" />
+                                <p>No se encontraron estaciones</p>
+                            </div>
+                        )}
+                    </div>
+
+                    {/* Map Placeholder */}
+                    <div className="lg:col-span-2 bg-slate-100 rounded-2xl relative overflow-hidden flex items-center justify-center border border-gray-200 shadow-inner group">
+                        <div className="absolute inset-0 bg-[url('https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/-77.0428, -12.0464,12,0/800x600?access_token=pk.eyJ1IjoiZXhhbXBsZSIsImEiOiJjazlqY201b24wM2ppM2VtZTMzZzRzbHJ2In0.PzM9J9X9i9_M9_9_9_9')] bg-cover opacity-60 grayscale group-hover:grayscale-0 transition-all duration-700"></div>
+                        <div className="z-10 bg-white/95 backdrop-blur-sm p-8 rounded-2xl shadow-2xl text-center max-w-sm mx-4 transform transition-transform duration-300 group-hover:scale-105 border border-white/20">
+                            <div className="bg-blue-50 h-16 w-16 rounded-full flex items-center justify-center mx-auto mb-4 text-corporate-blue">
+                                <MapPin size={32} />
+                            </div>
+                            <h3 className="text-2xl font-bold text-corporate-navy mb-2">Mapa Interactivo</h3>
+                            <p className="text-muted-foreground mb-6 leading-relaxed">
+                                Explora nuestra red de estaciones en todo el país. Selecciona una estación en la lista para ver su ubicación.
+                            </p>
+                            <Button size="lg" className="w-full bg-corporate-navy hover:bg-corporate-dark text-white font-bold shadow-lg">
+                                Ver en Google Maps
+                            </Button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </PageLayout>
+    );
+}

@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* PETROAMÉRICA Corporate Colors - Premium Palette 2025 */
+    --background: 210 20% 99%;
+    /* Slightly cool white */
+    --foreground: 220 50% 15%;
+    /* Deep Navy Text */
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 50% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 50% 15%;
+
+    /* Primary - Dark Corporate Blue (Refined) */
+    --primary: 221 80% 22%;
+    /* Richer, deeper blue */
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 221 80% 18%;
+
+    /* Secondary - Cyan Blue (Refined) */
+    --secondary: 195 90% 45%;
+    /* slightly more saturated */
+    --secondary-foreground: 0 0% 100%;
+    --secondary-hover: 195 90% 40%;
+
+    --muted: 210 20% 96%;
+    --muted-foreground: 215 15% 45%;
+    /* Slightly darker for better readability */
+
+    /* Accent - Light Cyan */
+    --accent: 195 85% 50%;
+    --accent-foreground: 221 80% 15%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 20% 90%;
+    --input: 214 20% 90%;
+    --ring: 195 90% 45%;
+
+    --radius: 0.5rem;
+
+    /* Custom Corporate Variables */
+    --corporate-dark: 221 80% 18%;
+    --corporate-navy: 221 80% 22%;
+    --corporate-blue: 215 60% 40%;
+    --corporate-cyan: 195 90% 45%;
+    --corporate-light-cyan: 195 85% 50%;
+    --corporate-gray: 210 10% 55%;
+    --corporate-light-gray: 210 20% 96%;
+    --corporate-slate: 218 25% 92%;
+    /* Sophisticated background */
+
+    /* Sidebar */
+    --sidebar-background: 221 80% 22%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 195 90% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 221 70% 28%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 221 60% 30%;
+    --sidebar-ring: 195 90% 45%;
+  }
+
+  .dark {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 195 90% 50%;
+    --primary-foreground: 222 47% 11%;
+    --primary-hover: 195 90% 45%;
+
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
+    --secondary-hover: 217 33% 25%;
+
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 217 33% 17%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 212 27% 14%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: -0.015em;
+    /* Optimized for modern look */
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Montserrat', sans-serif;
+    @apply font-bold tracking-tight text-corporate-navy;
+  }
+
+  h1 {
+    @apply leading-tight;
+  }
+
+  p {
+    @apply leading-relaxed;
+  }
+}
+
+@layer components {
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-20 md:py-28;
+    /* Increased breathing room */
+  }
+
+  .corporate-gradient {
+    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--corporate-dark)) 100%);
+  }
+
+  .cyan-gradient {
+    background: linear-gradient(135deg, hsl(var(--secondary)) 0%, hsl(var(--accent)) 100%);
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background: linear-gradient(135deg, hsl(var(--secondary)) 0%, hsl(var(--accent)) 100%);
+  }
+
+  /* Premium Card Styles */
+  .card-hover {
+    @apply transition-all duration-300 ease-out border border-border/50 bg-card;
+  }
+
+  .card-hover:hover {
+    @apply shadow-soft -translate-y-1 border-secondary/20;
+  }
+
+  .overlay-dark {
+    background: linear-gradient(180deg, rgba(15, 23, 42, 0) 0%, rgba(15, 23, 42, 0.6) 100%);
+  }
+
+  .glass-effect {
+    @apply bg-white/10 backdrop-blur-md border border-white/20;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.6s ease-out forwards;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.6s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

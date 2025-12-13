@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://petroamerica.com.pe/sitemap.xml
