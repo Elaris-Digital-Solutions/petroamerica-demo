@@ -11,7 +11,7 @@ export function HeroSection() {
   };
 
   return (
-    <section className="relative w-full h-[85vh] min-h-[600px] flex items-center overflow-hidden">
+    <section className="relative w-full h-screen min-h-[600px] flex items-center overflow-hidden">
       {/* Background Image with Zoom Effect */}
       <div
         className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat animate-slow-zoom"
@@ -26,15 +26,15 @@ export function HeroSection() {
       <div className="relative z-10 section-container w-full h-full flex flex-col justify-center">
         <div className="max-w-4xl space-y-8">
           <div className="animate-fade-in opacity-0" style={{ animationDelay: "0.2s", animationFillMode: "forwards" }}>
-            <span className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-white/20 to-corporate-blue/10 backdrop-blur-sm border border-corporate-blue/20 text-corporate-blue text-sm font-bold tracking-wider rounded-full uppercase">
-              <span className="w-2 h-2 rounded-full bg-corporate-blue animate-pulse" />
+            <span className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-white/20 to-corporate-blue/10 backdrop-blur-sm border border-white/20 text-white text-sm font-bold tracking-wider rounded-full uppercase">
+              <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
               Líderes en Energía
             </span>
           </div>
 
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight animate-slide-up opacity-0" style={{ animationDelay: "0.4s", animationFillMode: "forwards" }}>
             Impulsando el desarrollo <br />
-            <span className="text-corporate-blue">
+            <span className="text-white">
               productivo del Perú
             </span>
           </h1>

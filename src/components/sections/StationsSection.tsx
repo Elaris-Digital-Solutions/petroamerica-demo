@@ -11,7 +11,7 @@ export function StationsSection() {
             <span className="text-secondary font-semibold text-sm uppercase tracking-wider">
               Nuestra Red
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-6 text-white">
               Estaciones de Servicio
             </h2>
             <p className="text-primary-foreground/90 text-lg leading-relaxed mb-6">
@@ -26,7 +26,7 @@ export function StationsSection() {
                   <MapPin className="h-4 w-4 text-secondary-foreground" />
                 </div>
                 <div>
-                  <h4 className="font-semibold">Cobertura Nacional</h4>
+                  <h4 className="font-semibold text-white">Cobertura Nacional</h4>
                   <p className="text-primary-foreground/80 text-sm">
                     Presencia en 15 regiones del Perú
                   </p>
@@ -37,7 +37,7 @@ export function StationsSection() {
                   <Search className="h-4 w-4 text-secondary-foreground" />
                 </div>
                 <div>
-                  <h4 className="font-semibold">Servicios Complementarios</h4>
+                  <h4 className="font-semibold text-white">Servicios Complementarios</h4>
                   <p className="text-primary-foreground/80 text-sm">
                     Tiendas de conveniencia, lavado y lubricación
                   </p>
@@ -48,7 +48,7 @@ export function StationsSection() {
                   <Navigation className="h-4 w-4 text-secondary-foreground" />
                 </div>
                 <div>
-                  <h4 className="font-semibold">Atención 24/7</h4>
+                  <h4 className="font-semibold text-white">Atención 24/7</h4>
                   <p className="text-primary-foreground/80 text-sm">
                     Estaciones con servicio continuo en ubicaciones estratégicas
                   </p>

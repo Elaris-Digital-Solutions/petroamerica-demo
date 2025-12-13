@@ -11,7 +11,7 @@ interface PageHeroProps {
 
 export function PageHero({ title, subtitle, image, className, children }: PageHeroProps) {
     return (
-        <div className={cn("relative w-full h-[400px] flex items-center overflow-hidden bg-corporate-navy", className)}>
+        <div className={cn("relative w-full h-screen min-h-[600px] flex items-center overflow-hidden bg-corporate-navy", className)}>
             {/* Background Image with Zoom Effect */}
             <div
                 className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat animate-slow-zoom"
