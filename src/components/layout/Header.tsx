@@ -83,7 +83,7 @@ export function Header({ variant = "solid" }: HeaderProps) {
                 className={cn(
                   "font-bold rounded-full transition-all",
                   isTransparent
-                    ? "border-white text-white hover:bg-white hover:text-corporate-navy"
+                    ? "bg-transparent border-white text-white hover:bg-white hover:text-corporate-navy"
                     : "bg-corporate-navy hover:bg-corporate-dark text-white"
                 )}
               >
