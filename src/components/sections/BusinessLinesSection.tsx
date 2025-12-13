@@ -1,34 +1,13 @@
-import { Button } from "@/components/ui/button";
-import { ArrowRight, Fuel, Truck, Factory, Store } from "lucide-react";
-import transportImg from "@/assets/business-transport.jpg";
-import refineryImg from "@/assets/business-refinery.jpg";
-import retailImg from "@/assets/business-retail.jpg";
 
-const businessLines = [
-  {
-    icon: Fuel,
-    title: "Venta Minorista",
-    description: "Red de estaciones de servicio con combustibles de alta calidad, tiendas de conveniencia y servicios complementarios.",
-    image: retailImg,
-    href: "/lineas-de-negocio/minorista",
-  },
-  {
-    icon: Truck,
-    title: "Distribución Mayorista",
-    description: "Abastecimiento de combustibles a empresas industriales, mineras, pesqueras y de transporte en todo el país.",
-    image: transportImg,
-    href: "/lineas-de-negocio/mayorista",
-  },
-  {
-    icon: Factory,
-    title: "Operaciones & Logística",
-    description: "Infraestructura de almacenamiento y logística para garantizar el suministro continuo de productos.",
-    image: refineryImg,
-    href: "/lineas-de-negocio/operaciones",
-  },
-];
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
+import { businessLines } from "@/data/businessLines";
 
 export function BusinessLinesSection() {
+  // Select specific lines to show on home or just first 3
+  const featuredLines = businessLines.slice(0, 3);
+
   return (
     <section className="section-padding bg-muted">
       <div className="section-container">
@@ -41,46 +20,49 @@ export function BusinessLinesSection() {
             Líneas de Negocio
           </h2>
           <p className="text-muted-foreground text-lg">
-            Ofrecemos soluciones integrales en el sector energético, desde la venta 
+            Ofrecemos soluciones integrales en el sector energético, desde la venta
             minorista hasta la distribución mayorista a nivel nacional.
           </p>
         </div>
 
         {/* Cards Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {businessLines.map((line, index) => (
-            <div 
-              key={line.title}
+          {featuredLines.map((line, index) => (
+            <div
+              key={line.id}
               className="group bg-card rounded-lg overflow-hidden shadow-md card-hover animate-slide-up"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Image */}
               <div className="relative h-48 overflow-hidden">
-                <img 
-                  src={line.image} 
+                <img
+                  src={line.image}
                   alt={line.title}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent" />
                 <div className="absolute bottom-4 left-4">
-                  <div className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center">
-                    <line.icon className="h-6 w-6 text-secondary-foreground" />
+                  <div className={`w-12 h-12 rounded-full flex items-center justify-center ${line.color ? 'bg-secondary text-secondary-foreground' : 'bg-secondary text-secondary-foreground'}`}>
+                    {/* Note: In a real app we might handle colors dynamically better */}
+                    <line.icon className="h-6 w-6 text-white" />
                   </div>
                 </div>
               </div>
-              
+
               {/* Content */}
               <div className="p-6">
                 <h3 className="text-xl font-bold text-foreground mb-3">
                   {line.title}
                 </h3>
-                <p className="text-muted-foreground mb-4 leading-relaxed">
+                <p className="text-muted-foreground mb-4 leading-relaxed line-clamp-3">
                   {line.description}
                 </p>
-                <Button variant="link" className="p-0 h-auto text-secondary hover:text-accent">
-                  Ver más
-                  <ArrowRight className="ml-1 h-4 w-4" />
-                </Button>
+                <Link to={`/lineas-de-negocio/${line.id}`}>
+                  <Button variant="link" className="p-0 h-auto text-secondary hover:text-accent">
+                    Ver más
+                    <ArrowRight className="ml-1 h-4 w-4" />
+                  </Button>
+                </Link>
               </div>
             </div>
           ))}
@@ -88,10 +70,12 @@ export function BusinessLinesSection() {
 
         {/* CTA */}
         <div className="text-center mt-12">
-          <Button variant="corporate" size="lg">
-            Ver todas las líneas de negocio
-            <ArrowRight className="ml-2 h-4 w-4" />
-          </Button>
+          <Link to="/lineas-de-negocio">
+            <Button variant="corporate" size="lg">
+              Ver todas las líneas de negocio
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

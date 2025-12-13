@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import { MapPin, Search, Navigation } from "lucide-react";
 
 export function StationsSection() {
@@ -15,11 +16,11 @@ export function StationsSection() {
               Estaciones de Servicio
             </h2>
             <p className="text-primary-foreground/90 text-lg leading-relaxed mb-6">
-              Contamos con más de 150 estaciones de servicio estratégicamente ubicadas 
-              en las principales ciudades y carreteras del país, ofreciendo combustibles 
+              Contamos con más de 150 estaciones de servicio estratégicamente ubicadas
+              en las principales ciudades y carreteras del país, ofreciendo combustibles
               de la más alta calidad.
             </p>
-            
+
             <ul className="space-y-4 mb-8">
               <li className="flex items-start gap-3">
                 <div className="w-8 h-8 rounded-full bg-secondary flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -56,9 +57,11 @@ export function StationsSection() {
               </li>
             </ul>
 
-            <Button variant="hero" size="lg">
-              Encuentra tu estación más cercana
-            </Button>
+            <Link to="/estaciones">
+              <Button variant="hero" size="lg">
+                Encuentra tu estación más cercana
+              </Button>
+            </Link>
           </div>
 
           {/* Map Placeholder */}
