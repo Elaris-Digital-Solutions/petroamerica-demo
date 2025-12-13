@@ -70,7 +70,7 @@ export function StationsSection() {
                   <div className="w-20 h-20 rounded-full bg-secondary/20 flex items-center justify-center mx-auto mb-4">
                     <MapPin className="h-10 w-10 text-secondary" />
                   </div>
-                  <h3 className="text-xl font-semibold mb-2">Mapa Interactivo</h3>
+                  <h3 className="text-xl font-semibold mb-2 text-white">Mapa Interactivo</h3>
                   <p className="text-primary-foreground/70 text-sm max-w-xs">
                     Próximamente podrás explorar todas nuestras estaciones en un mapa interactivo
                   </p>

@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import { ChevronRight, ArrowDown } from "lucide-react";
 import heroImage from "@/assets/hero-station.jpg";
 
@@ -37,13 +38,17 @@ export function HeroSection() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 pt-4 animate-slide-up opacity-0" style={{ animationDelay: "0.8s", animationFillMode: "forwards" }}>
-            <Button size="xl" className="bg-corporate-blue hover:bg-corporate-blue/90 text-white font-bold text-lg px-8 shadow-lg shadow-corporate-blue/20 transition-all hover:-translate-y-1">
-              Conoce nuestras estaciones
-              <ChevronRight className="ml-2 h-5 w-5" />
-            </Button>
-            <Button variant="outline" size="xl" className="bg-transparent border-white/30 text-white hover:bg-white/10 hover:border-white transition-all backdrop-blur-sm text-lg px-8">
-              Soluciones Empresariales
-            </Button>
+            <Link to="/estaciones">
+              <Button size="xl" className="bg-corporate-blue hover:bg-corporate-blue/90 text-white font-bold text-lg px-8 shadow-lg shadow-corporate-blue/20 transition-all hover:-translate-y-1 w-full sm:w-auto">
+                Conoce nuestras estaciones
+                <ChevronRight className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
+            <Link to="/lineas-de-negocio">
+              <Button variant="outline" size="xl" className="bg-transparent border-white/30 text-white hover:bg-white/10 hover:border-white transition-all backdrop-blur-sm text-lg px-8 w-full sm:w-auto">
+                Soluciones Empresariales
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

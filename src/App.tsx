@@ -12,6 +12,7 @@ import LineasNegocio from "./pages/LineasNegocio";
 import LineaDetalle from "./pages/LineaDetalle";
 import Estaciones from "./pages/Estaciones";
 import Promociones from "./pages/Promociones";
+import PromocionDetalle from "./pages/PromocionDetalle";
 import Blog from "./pages/Blog";
 import BlogDetalle from "./pages/BlogDetalle";
 import Trabaja from "./pages/Trabaja";
@@ -35,6 +36,7 @@ const App = () => (
             <Route path="/lineas-de-negocio/:id" element={<LineaDetalle />} />
             <Route path="/estaciones" element={<Estaciones />} />
             <Route path="/promociones" element={<Promociones />} />
+            <Route path="/promociones/:slug" element={<PromocionDetalle />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:id" element={<BlogDetalle />} />
             <Route path="/trabaja-con-nosotros" element={<Trabaja />} />
