@@ -24,12 +24,12 @@ export function PageHero({ title, subtitle, image, className, children }: PageHe
             {/* Content */}
             <div className="relative section-container w-full z-10">
                 <div className="max-w-3xl animate-slide-up">
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+                    <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
                         {title}
                     </h1>
 
                     {subtitle && (
-                        <p className="text-xl md:text-2xl text-gray-200 max-w-2xl leading-relaxed mb-6 font-light">
+                        <p className="text-lg md:text-2xl text-gray-200 max-w-2xl leading-relaxed mb-6 font-light">
                             {subtitle}
                         </p>
                     )}

@@ -116,12 +116,12 @@ export default function Nosotros() {
             {/* Equipo Directivo */}
             <section className="section-padding bg-background">
                 <div className="section-container">
-                    <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                    <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
                         <div className="max-w-2xl">
                             <span className="text-secondary font-bold text-sm tracking-widest uppercase mb-2 block">Liderazgo</span>
                             <h2 className="text-3xl md:text-4xl font-bold text-corporate-navy">Equipo Directivo</h2>
                         </div>
-                        <p className="text-muted-foreground max-w-lg text-right md:text-left">
+                        <p className="text-muted-foreground max-w-lg text-left md:text-right">
                             Expertos con amplia trayectoria guiando el crecimiento sostenible de la organización.
                         </p>
                     </div>

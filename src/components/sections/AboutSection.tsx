@@ -45,25 +45,27 @@ export function AboutSection() {
               estratégicamente ubicados.
             </p>
             
-            <div className="flex flex-wrap gap-8 mb-8">
+            <div className="grid grid-cols-3 gap-2 md:gap-8 mb-8 w-full">
               <div>
-                <div className="text-3xl font-bold text-primary">150+</div>
-                <div className="text-sm text-muted-foreground">Estaciones de servicio</div>
+                <div className="text-2xl md:text-3xl font-bold text-primary">150+</div>
+                <div className="text-xs md:text-sm text-muted-foreground">Estaciones de servicio</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-primary">1M+</div>
-                <div className="text-sm text-muted-foreground">Clientes atendidos</div>
+                <div className="text-2xl md:text-3xl font-bold text-primary">1M+</div>
+                <div className="text-xs md:text-sm text-muted-foreground">Clientes atendidos</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-primary">15</div>
-                <div className="text-sm text-muted-foreground">Regiones del Perú</div>
+                <div className="text-2xl md:text-3xl font-bold text-primary">15</div>
+                <div className="text-xs md:text-sm text-muted-foreground">Regiones del Perú</div>
               </div>
             </div>
 
-            <Button variant="corporate" size="lg">
-              Conoce más sobre nosotros
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
+            <div className="flex justify-center w-full">
+              <Button variant="corporate" size="lg" className="w-full sm:w-auto">
+                Conoce más sobre nosotros
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </div>
           </div>
         </div>
       </div>

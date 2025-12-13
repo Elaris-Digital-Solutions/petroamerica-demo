@@ -32,14 +32,14 @@ export function HeroSection() {
             </span>
           </div>
 
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight animate-slide-up opacity-0" style={{ animationDelay: "0.4s", animationFillMode: "forwards" }}>
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight animate-slide-up opacity-0" style={{ animationDelay: "0.4s", animationFillMode: "forwards" }}>
             Impulsando el desarrollo <br />
             <span className="text-white">
               productivo del Perú
             </span>
           </h1>
 
-          <p className="text-xl md:text-2xl text-gray-200 max-w-2xl leading-relaxed animate-slide-up opacity-0" style={{ animationDelay: "0.6s", animationFillMode: "forwards" }}>
+          <p className="text-lg md:text-2xl text-gray-200 max-w-2xl leading-relaxed animate-slide-up opacity-0" style={{ animationDelay: "0.6s", animationFillMode: "forwards" }}>
             Más de 25 años garantizando el abastecimiento de combustibles, GLP y lubricantes con los más altos estándares de calidad y seguridad.
           </p>
 
