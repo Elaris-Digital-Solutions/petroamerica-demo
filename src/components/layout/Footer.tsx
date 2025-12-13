@@ -46,17 +46,17 @@ export function Footer() {
   return (
     <footer className="bg-primary text-primary-foreground">
       {/* Main Footer */}
-      <div className="section-container section-padding">
+      <div className="section-container py-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company Info */}
           <div className="lg:col-span-1">
-            <img 
-              src={logo} 
-              alt="Petroamérica" 
+            <img
+              src={logo}
+              alt="Petroamérica"
               className="h-10 w-auto mb-6 brightness-0 invert"
             />
             <p className="text-primary-foreground/80 text-sm leading-relaxed mb-6">
-              Somos una empresa líder en el sector de hidrocarburos, comprometidos con la calidad, 
+              Somos una empresa líder en el sector de hidrocarburos, comprometidos con la calidad,
               seguridad y el desarrollo sostenible de la región.
             </p>
             {/* Social Links */}
@@ -76,7 +76,7 @@ export function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-semibold text-lg mb-6">Enlaces Rápidos</h3>
+            <h3 className="font-semibold text-lg mb-6 text-white">Navegación</h3>
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.label}>
@@ -93,7 +93,7 @@ export function Footer() {
 
           {/* Legal Links */}
           <div>
-            <h3 className="font-semibold text-lg mb-6">Legal</h3>
+            <h3 className="font-semibold text-lg mb-6 text-white">Información Legal</h3>
             <ul className="space-y-3">
               {legalLinks.map((link) => (
                 <li key={link.label}>
@@ -110,7 +110,7 @@ export function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h3 className="font-semibold text-lg mb-6">Contacto</h3>
+            <h3 className="font-semibold text-lg mb-6 text-white">Contáctanos</h3>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 mt-0.5 text-secondary flex-shrink-0" />
@@ -120,8 +120,8 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="h-5 w-5 text-secondary flex-shrink-0" />
-                <a 
-                  href="tel:+5116170000" 
+                <a
+                  href="tel:+5116170000"
                   className="text-primary-foreground/80 hover:text-secondary transition-colors duration-200 text-sm"
                 >
                   (01) 617-0000
@@ -129,8 +129,8 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="h-5 w-5 text-secondary flex-shrink-0" />
-                <a 
-                  href="mailto:contacto@petroamerica.com" 
+                <a
+                  href="mailto:contacto@petroamerica.com"
                   className="text-primary-foreground/80 hover:text-secondary transition-colors duration-200 text-sm"
                 >
                   contacto@petroamerica.com
