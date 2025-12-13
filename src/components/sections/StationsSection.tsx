@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
 import { MapPin, Search, Navigation } from "lucide-react";
 
 export function StationsSection() {
@@ -16,11 +15,11 @@ export function StationsSection() {
               Estaciones de Servicio
             </h2>
             <p className="text-primary-foreground/90 text-lg leading-relaxed mb-6">
-              Contamos con más de 150 estaciones de servicio estratégicamente ubicadas
-              en las principales ciudades y carreteras del país, ofreciendo combustibles
+              Contamos con más de 150 estaciones de servicio estratégicamente ubicadas 
+              en las principales ciudades y carreteras del país, ofreciendo combustibles 
               de la más alta calidad.
             </p>
-
+            
             <ul className="space-y-4 mb-8">
               <li className="flex items-start gap-3">
                 <div className="w-8 h-8 rounded-full bg-secondary flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -57,11 +56,9 @@ export function StationsSection() {
               </li>
             </ul>
 
-            <Link to="/estaciones">
-              <Button variant="hero" size="lg">
-                Encuentra tu estación más cercana
-              </Button>
-            </Link>
+            <Button variant="hero" size="lg">
+              Encuentra tu estación más cercana
+            </Button>
           </div>
 
           {/* Map Placeholder */}
@@ -73,7 +70,7 @@ export function StationsSection() {
                   <div className="w-20 h-20 rounded-full bg-secondary/20 flex items-center justify-center mx-auto mb-4">
                     <MapPin className="h-10 w-10 text-secondary" />
                   </div>
-                  <h3 className="text-xl font-semibold mb-2">Mapa Interactivo</h3>
+                  <h3 className="text-xl font-semibold mb-2 text-white">Mapa Interactivo</h3>
                   <p className="text-primary-foreground/70 text-sm max-w-xs">
                     Próximamente podrás explorar todas nuestras estaciones en un mapa interactivo
                   </p>
