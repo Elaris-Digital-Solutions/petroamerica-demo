@@ -8,6 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Badge } from "@/components/ui/badge";
 import { stations } from "@/data/stations";
 import heroImg from "@/assets/hero-station.jpg";
+import { PeruStationsMap } from "@/components/PeruStationsMap";
 
 export default function Estaciones() {
     const [searchTerm, setSearchTerm] = useState("");
@@ -79,7 +80,7 @@ export default function Estaciones() {
                                     <span className="leading-snug">{station.address}</span>
                                 </div>
                                 <div className="flex flex-wrap gap-2 mb-4">
-                                    {station.services.map(service => (
+                                    {station.services?.map(service => (
                                         <Badge key={service} variant="secondary" className="text-xs font-medium bg-slate-100 text-slate-600 hover:bg-slate-200 border-0">
                                             {service}
                                         </Badge>
@@ -99,21 +100,9 @@ export default function Estaciones() {
                         )}
                     </div>
 
-                    {/* Map Placeholder */}
-                    <div className="lg:col-span-2 bg-slate-100 rounded-2xl relative overflow-hidden flex items-center justify-center border border-gray-200 shadow-inner group">
-                        <div className="absolute inset-0 bg-[url('https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/-77.0428, -12.0464,12,0/800x600?access_token=pk.eyJ1IjoiZXhhbXBsZSIsImEiOiJjazlqY201b24wM2ppM2VtZTMzZzRzbHJ2In0.PzM9J9X9i9_M9_9_9_9')] bg-cover opacity-60 grayscale group-hover:grayscale-0 transition-all duration-700"></div>
-                        <div className="z-10 bg-white/95 backdrop-blur-sm p-8 rounded-2xl shadow-2xl text-center max-w-sm mx-4 transform transition-transform duration-300 group-hover:scale-105 border border-white/20">
-                            <div className="bg-blue-50 h-16 w-16 rounded-full flex items-center justify-center mx-auto mb-4 text-corporate-blue">
-                                <MapPin size={32} />
-                            </div>
-                            <h3 className="text-2xl font-bold text-corporate-navy mb-2">Mapa Interactivo</h3>
-                            <p className="text-muted-foreground mb-6 leading-relaxed">
-                                Explora nuestra red de estaciones en todo el país. Selecciona una estación en la lista para ver su ubicación.
-                            </p>
-                            <Button size="lg" className="w-full bg-corporate-navy hover:bg-corporate-dark text-white font-bold shadow-lg">
-                                Ver en Google Maps
-                            </Button>
-                        </div>
+                    {/* Map Component */}
+                    <div className="lg:col-span-2 h-full min-h-[500px] rounded-2xl overflow-hidden shadow-xl border border-gray-200">
+                        <PeruStationsMap />
                     </div>
                 </div>
             </div>
