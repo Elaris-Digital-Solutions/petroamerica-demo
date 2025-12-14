@@ -1,4 +1,8 @@
 import { Truck, Droplets, Flame, Factory, LucideIcon } from "lucide-react";
+import glpImg from "@/assets/glp_envasado.jpg";
+import combImg from "@/assets/comb_liquid.png";
+import lubImg from "@/assets/lubricantes.jpg";
+import logImg from "@/assets/logistica.jpg";
 
 export interface BusinessLine {
     id: string;
@@ -19,7 +23,7 @@ export const businessLines: BusinessLine[] = [
         longDescription: "Proveemos gasolina y diésel de la más alta calidad, con un aditivo exclusivo que mejora el rendimiento y protege el motor. Nuestra red de distribución garantiza el abastecimiento continuo para estaciones de servicio y clientes industriales en todo el país.",
         icon: Droplets,
         color: "bg-blue-100 text-blue-600",
-        image: "https://images.unsplash.com/photo-1545127398-14699f92334b?auto=format&fit=crop&q=80&w=1935",
+        image: combImg,
         features: [
             "Mayor rendimiento por galón",
             "Menor emisión de gases contaminantes",
@@ -34,7 +38,7 @@ export const businessLines: BusinessLine[] = [
         longDescription: "Llevamos energía segura y eficiente a hogares y empresas. Contamos con plantas de envasado modernas y una logística optimizada para atender pedidos de granel para industrias, hoteles y comercios, así como garrafas para el hogar.",
         icon: Flame,
         color: "bg-orange-100 text-orange-600",
-        image: "https://images.unsplash.com/photo-1583232898395-950c05769151?auto=format&fit=crop&q=80&w=2670",
+        image: glpImg,
         features: [
             "Balones de 10kg y 45kg de peso exacto",
             "Instalación de tanques estacionarios",
@@ -49,7 +53,7 @@ export const businessLines: BusinessLine[] = [
         longDescription: "Distribuimos una gama completa de lubricantes sintéticos y minerales diseñados para maximizar la vida útil de sus equipos. Trabajamos con marcas líderes mundiales y ofrecemos soporte técnico para planes de lubricación industrial.",
         icon: Factory,
         color: "bg-gray-100 text-gray-600",
-        image: "https://images.unsplash.com/photo-1508974239382-78d738bbd4e7?auto=format&fit=crop&q=80&w=2670",
+        image: lubImg,
         features: [
             "Aceites minerales, sintéticos y semi-sintéticos",
             "Para motores gasolina y diesel",
@@ -64,7 +68,7 @@ export const businessLines: BusinessLine[] = [
         longDescription: "Nuestra división de logística cuenta con una de las flotas más modernas del país, equipada con tecnología de rastreo satelital y conductores altamente capacitados en seguridad vial y manejo de materiales peligrosos.",
         icon: Truck,
         color: "bg-green-100 text-green-600",
-        image: "https://images.unsplash.com/photo-1586749033285-b9183cc42095?auto=format&fit=crop&q=80&w=2670",
+        image: logImg,
         features: [
             "Flota monitoreada por GPS 24/7",
             "Conductores certificados y capacitados",

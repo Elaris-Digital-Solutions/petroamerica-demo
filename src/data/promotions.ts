@@ -1,3 +1,6 @@
+import promglpImg from "@/assets/prom_glp.jpg";
+import puntpetImg from "@/assets/puntos_pet.jpg";
+
 export interface Promotion {
     id: number;
     title: string;
@@ -27,7 +30,7 @@ export const promotions: Promotion[] = [
             </ul>
         `,
         validUntil: "31 de Diciembre",
-        image: "https://images.unsplash.com/photo-1626620573934-2e67a9990e94?auto=format&fit=crop&q=80&w=2000",
+        image: promglpImg,
         type: "GLP Hogar",
         legal: "Válido solo para nuevos clientes en Lima Metropolitana. No acumulable con otras promociones. Sujeto a evaluación crediticia."
     },
@@ -55,7 +58,7 @@ export const promotions: Promotion[] = [
             <p>Canjea tus puntos por combustible gratis, productos del market o descuentos exclusivos en establecimientos afiliados.</p>
         `,
         validUntil: "Todo el mes",
-        image: "https://images.unsplash.com/photo-1563286595-23c21a1fc89c?auto=format&fit=crop&q=80&w=2667",
+        image: puntpetImg,
         type: "Fidelización",
         legal: "Válido en toda la red Petroamérica a nivel nacional. Es indispensable presentar DNI o tarjeta de fidelización al momento de la compra."
     }

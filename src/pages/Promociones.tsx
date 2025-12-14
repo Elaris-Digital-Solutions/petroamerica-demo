@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { promotions } from "@/data/promotions";
-import heroImg from "@/assets/promo-1.jpg";
+import heroImg from "@/assets/Hero_prom.png";
 
 // Preload hero image
 if (typeof window !== 'undefined') {
