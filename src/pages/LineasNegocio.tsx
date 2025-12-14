@@ -6,6 +6,15 @@ import { Button } from "@/components/ui/button";
 import { businessLines } from "@/data/businessLines";
 import heroImg from "@/assets/business-refinery.jpg";
 
+// Preload hero image
+if (typeof window !== 'undefined') {
+    const link = document.createElement('link');
+    link.rel = 'preload';
+    link.as = 'image';
+    link.href = heroImg;
+    document.head.appendChild(link);
+}
+
 export default function LineasNegocio() {
     return (
         <PageLayout headerVariant="transparent">

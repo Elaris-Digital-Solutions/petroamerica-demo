@@ -7,6 +7,15 @@ import { Input } from "@/components/ui/input";
 import { promotions } from "@/data/promotions";
 import heroImg from "@/assets/promo-1.jpg";
 
+// Preload hero image
+if (typeof window !== 'undefined') {
+    const link = document.createElement('link');
+    link.rel = 'preload';
+    link.as = 'image';
+    link.href = heroImg;
+    document.head.appendChild(link);
+}
+
 export default function Promociones() {
     return (
         <PageLayout headerVariant="transparent">

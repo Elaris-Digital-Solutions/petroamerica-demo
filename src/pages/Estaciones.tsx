@@ -8,6 +8,15 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Badge } from "@/components/ui/badge";
 import { stations } from "@/data/stations";
 import heroImg from "@/assets/hero-station.jpg";
+
+// Preload hero image
+if (typeof window !== 'undefined') {
+    const link = document.createElement('link');
+    link.rel = 'preload';
+    link.as = 'image';
+    link.href = heroImg;
+    document.head.appendChild(link);
+}
 import { PeruStationsMap } from "@/components/PeruStationsMap";
 
 export default function Estaciones() {

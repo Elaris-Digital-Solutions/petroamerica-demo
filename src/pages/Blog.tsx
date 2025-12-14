@@ -7,7 +7,16 @@ import { Button } from "@/components/ui/button";
 import { Clock, ChevronRight, User, Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { blogPosts } from "@/data/blog";
-import heroImg from "@/assets/blog-1.jpg";
+import heroImg from "@/assets/hero-station.jpg";
+
+// Preload hero image
+if (typeof window !== 'undefined') {
+    const link = document.createElement('link');
+    link.rel = 'preload';
+    link.as = 'image';
+    link.href = heroImg;
+    document.head.appendChild(link);
+}
 
 const categories = ["Todos", "Corporativo", "Tecnología", "Consejos", "Sostenibilidad"];
 
@@ -74,6 +83,8 @@ export default function Blog() {
                                     src={article.image}
                                     alt={article.title}
                                     className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                                    loading="eager"
+                                    fetchPriority="high"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                                 <div className="absolute top-4 left-4">

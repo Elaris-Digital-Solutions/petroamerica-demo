@@ -10,6 +10,14 @@ interface PageHeroProps {
 }
 
 export function PageHero({ title, subtitle, image, className, children }: PageHeroProps) {
+    // Preload hero image
+    if (typeof window !== 'undefined' && image) {
+        const link = document.createElement('link');
+        link.rel = 'preload';
+        link.as = 'image';
+        link.href = image;
+        document.head.appendChild(link);
+    }
     return (
         <div className={cn("relative w-full h-screen min-h-[600px] flex items-center overflow-hidden bg-corporate-navy", className)}>
             {/* Background Image with Zoom Effect */}

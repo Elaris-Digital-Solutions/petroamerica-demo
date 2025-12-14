@@ -1,4 +1,16 @@
 import { useEffect, useState } from 'react';
+// Preload Leaflet map tiles for faster initial render
+if (typeof window !== 'undefined') {
+    const preloadTile = (url: string) => {
+        const link = document.createElement('link');
+        link.rel = 'preload';
+        link.as = 'image';
+        link.href = url;
+        document.head.appendChild(link);
+    };
+    // Preload OpenStreetMap tile example (zoom 5, Peru area)
+    preloadTile('https://{s}.tile.openstreetmap.org/5/19/13.png');
+}
 import { MapContainer, TileLayer, GeoJSON, Marker, Popup, useMap, useMapEvents } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';

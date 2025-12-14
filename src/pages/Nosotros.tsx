@@ -3,6 +3,15 @@ import { PageHero } from "@/components/layout/PageHero";
 import { Users, Award, Target, Eye, Heart, CheckCircle2 } from "lucide-react";
 import heroImage from "@/assets/about-building.png";
 
+// Preload hero image
+if (typeof window !== 'undefined') {
+    const link = document.createElement('link');
+    link.rel = 'preload';
+    link.as = 'image';
+    link.href = heroImage;
+    document.head.appendChild(link);
+}
+
 export default function Nosotros() {
     return (
         <PageLayout headerVariant="transparent">

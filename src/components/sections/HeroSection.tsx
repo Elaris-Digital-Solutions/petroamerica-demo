@@ -3,6 +3,15 @@ import { Link } from "react-router-dom";
 import { ChevronRight, ArrowDown } from "lucide-react";
 import heroImage from "@/assets/hero-station.jpg";
 
+// Preload hero image
+if (typeof window !== 'undefined') {
+  const link = document.createElement('link');
+  link.rel = 'preload';
+  link.as = 'image';
+  link.href = heroImage;
+  document.head.appendChild(link);
+}
+
 export function HeroSection() {
   return (
     <section className="relative w-full h-screen min-h-[600px] flex items-center overflow-hidden">
