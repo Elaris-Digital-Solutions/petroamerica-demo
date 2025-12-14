@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Clock, ChevronRight, User, Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { blogPosts } from "@/data/blog";
-import heroImg from "@/assets/hero-station.jpg";
+import heroImg from "@/assets/hero-station.png";
 
 // Preload hero image
 if (typeof window !== 'undefined') {

@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ChevronRight, ArrowDown } from "lucide-react";
-import heroImage from "@/assets/hero-station.jpg";
+import heroImage from "@/assets/hero-station.png";
 
 // Preload hero image
 if (typeof window !== 'undefined') {

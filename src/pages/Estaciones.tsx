@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Badge } from "@/components/ui/badge";
 import { stations } from "@/data/stations";
-import heroImg from "@/assets/hero-station.jpg";
+import heroImg from "@/assets/hero-station.png";
 
 // Preload hero image
 if (typeof window !== 'undefined') {

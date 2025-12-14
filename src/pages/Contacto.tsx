@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Phone, Mail, MapPin, Clock, Send } from "lucide-react";
-import heroImg from "@/assets/hero-station.jpg";
+import heroImg from "@/assets/hero-station.png";
 
 // Preload hero image
 if (typeof window !== 'undefined') {
