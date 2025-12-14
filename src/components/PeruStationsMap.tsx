@@ -103,7 +103,31 @@ function MapController() {
     return null;
 }
 
-export function PeruStationsMap() {
+// Component to handle map focus on selected station
+function FlyToStation({ selectedStationId }: { selectedStationId: number | null }) {
+    const map = useMap();
+
+    useEffect(() => {
+        if (!selectedStationId) return;
+
+        const station = stations.find(s => s.id === selectedStationId);
+        if (station) {
+            map.flyTo([station.lat, station.lng], 15, {
+                duration: 1.5
+            });
+
+            // Optional: You could also open the popup here if you had a ref to the markers
+        }
+    }, [selectedStationId, map]);
+
+    return null;
+}
+
+interface PeruStationsMapProps {
+    selectedStationId?: number | null;
+}
+
+export function PeruStationsMap({ selectedStationId = null }: PeruStationsMapProps) {
     const [geoData, setGeoData] = useState<GeoJSONData | null>(null);
 
     useEffect(() => {
@@ -170,6 +194,7 @@ export function PeruStationsMap() {
                 style={{ background: '#f8fafc' }}
             >
                 <MapController />
+                <FlyToStation selectedStationId={selectedStationId} />
 
                 <TileLayer
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'

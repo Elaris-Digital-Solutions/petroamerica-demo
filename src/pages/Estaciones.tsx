@@ -13,6 +13,7 @@ import { PeruStationsMap } from "@/components/PeruStationsMap";
 export default function Estaciones() {
     const [searchTerm, setSearchTerm] = useState("");
     const [selectedRegion, setSelectedRegion] = useState("all");
+    const [selectedStationId, setSelectedStationId] = useState<number | null>(null);
 
     const filteredStations = stations.filter(station => {
         const matchesSearch = station.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -86,7 +87,12 @@ export default function Estaciones() {
                                         </Badge>
                                     ))}
                                 </div>
-                                <Button variant="outline" size="sm" className="w-full text-xs h-9 font-semibold border-corporate-blue/20 text-corporate-blue hover:bg-corporate-blue hover:text-white transition-all">
+                                <Button
+                                    variant="outline"
+                                    size="sm"
+                                    className="w-full text-xs h-9 font-semibold border-corporate-blue/20 text-corporate-blue hover:bg-corporate-blue hover:text-white transition-all"
+                                    onClick={() => setSelectedStationId(station.id)}
+                                >
                                     <Navigation size={14} className="mr-2" />
                                     Cómo llegar
                                 </Button>
@@ -102,7 +108,7 @@ export default function Estaciones() {
 
                     {/* Map Component */}
                     <div className="lg:col-span-2 h-full min-h-[500px] rounded-2xl overflow-hidden shadow-xl border border-gray-200">
-                        <PeruStationsMap />
+                        <PeruStationsMap selectedStationId={selectedStationId} />
                     </div>
                 </div>
             </div>
