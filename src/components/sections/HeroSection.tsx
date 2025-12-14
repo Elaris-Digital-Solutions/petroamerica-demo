@@ -4,13 +4,6 @@ import { ChevronRight, ArrowDown } from "lucide-react";
 import heroImage from "@/assets/hero-station.jpg";
 
 export function HeroSection() {
-  const scrollToContent = () => {
-    const aboutSection = document.getElementById('nosotros');
-    if (aboutSection) {
-      aboutSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <section className="relative w-full h-screen min-h-[600px] flex items-center overflow-hidden">
       {/* Background Image with Zoom Effect */}
@@ -57,14 +50,6 @@ export function HeroSection() {
               </Button>
             </Link>
           </div>
-        </div>
-      </div>
-
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce cursor-pointer z-20" onClick={scrollToContent}>
-        <div className="flex flex-col items-center gap-2 text-white/50 hover:text-white transition-colors">
-          <span className="text-xs uppercase tracking-widest font-medium">Descubre Más</span>
-          <ArrowDown size={24} />
         </div>
       </div>
     </section>
