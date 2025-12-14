@@ -108,7 +108,7 @@ export function PeruStationsMap() {
             <MapContainer
                 center={[-9.19, -75.015]} // Center of Peru approx
                 zoom={6}
-                scrollWheelZoom={false} // Disable scroll zoom for better UX on landing page
+                scrollWheelZoom={true} // Enable scroll zoom for better UX
                 className="w-full h-full z-0"
                 style={{ background: '#f8fafc' }}
             >
