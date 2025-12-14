@@ -30,9 +30,9 @@ export default function Blog() {
                 image={heroImg}
             />
 
-            <div className="section-container section-padding">
+            <div className="section-container section-padding relative z-20">
                 {/* Search & Categories Bar */}
-                <div className="bg-white p-4 rounded-2xl shadow-xl border border-gray-100 mb-12 flex flex-col md:flex-row items-center justify-between gap-6">
+                <div className="bg-white p-4 rounded-2xl shadow-xl border border-gray-100 mb-12 flex flex-col md:flex-row items-center justify-between gap-6 -mt-20">
                     <div className="flex overflow-x-auto pb-2 md:pb-0 gap-2 w-full md:w-auto scrollbar-hide">
                         {categories.map((cat) => (
                             <Button
@@ -40,8 +40,8 @@ export default function Blog() {
                                 variant={activeCategory === cat ? "default" : "ghost"}
                                 onClick={() => setActiveCategory(cat)}
                                 className={`rounded-xl px-6 font-medium transition-all ${activeCategory === cat
-                                    ? "bg-corporate-navy hover:bg-corporate-dark text-white shadow-md"
-                                    : "text-muted-foreground hover:text-corporate-navy hover:bg-gray-100"
+                                        ? "bg-corporate-navy hover:bg-corporate-dark text-white shadow-md"
+                                        : "text-muted-foreground hover:text-corporate-navy hover:bg-gray-100"
                                     }`}
                             >
                                 {cat}

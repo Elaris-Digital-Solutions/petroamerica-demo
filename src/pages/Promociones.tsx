@@ -1,6 +1,5 @@
 import { PageLayout } from "@/components/layout/PageLayout";
 import { PageHero } from "@/components/layout/PageHero";
-import { Link } from "react-router-dom";
 import { Calendar, Tag, ArrowRight, Gift } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -17,10 +16,10 @@ export default function Promociones() {
                 image={heroImg}
             />
 
-            <div className="section-container section-padding">
+            <div className="section-container section-padding relative z-20">
                 {/* Featured Promo (if any, or just header) - Skipping for grid focus */}
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 -mt-20">
                     {promotions.map((promo, index) => (
                         <div
                             key={promo.id}
@@ -57,15 +56,13 @@ export default function Promociones() {
                                 </p>
 
                                 <div className="pt-4 mt-auto border-t border-gray-100 w-full flex items-center justify-between">
-                                    <Link to={`/promociones/${promo.slug}`} className="text-xs text-muted-foreground hover:text-corporate-navy underline decoration-muted-foreground/50 underline-offset-4 transition-colors">
+                                    <a href="#" className="text-xs text-muted-foreground hover:text-corporate-navy underline decoration-muted-foreground/50 underline-offset-4 transition-colors">
                                         Términos y condiciones
-                                    </Link>
-                                    <Link to={`/promociones/${promo.slug}`}>
-                                        <Button variant="ghost" size="sm" className="text-corporate-navy font-bold hover:text-secondary p-0 hover:bg-transparent group/btn">
-                                            Ver detalles
-                                            <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
-                                        </Button>
-                                    </Link>
+                                    </a>
+                                    <Button variant="ghost" size="sm" className="text-corporate-navy font-bold hover:text-secondary p-0 hover:bg-transparent group/btn">
+                                        Ver detalles
+                                        <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
+                                    </Button>
                                 </div>
                             </div>
                         </div>

@@ -8,7 +8,7 @@ export default function Nosotros() {
         <PageLayout headerVariant="transparent">
             <PageHero
                 title="Sobre Nosotros"
-                subtitle="Más de 25 años impulsando el desarrollo energético del Perú con compromiso, seguridad y eficiencia."
+                subtitle="Más de 40 años impulsando el desarrollo energético del Perú con compromiso, seguridad y eficiencia."
                 image={heroImage}
             />
 
