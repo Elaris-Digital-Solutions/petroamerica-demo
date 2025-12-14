@@ -34,7 +34,7 @@ export function HeroSection() {
           </h1>
 
           <p className="text-lg md:text-2xl text-gray-200 max-w-2xl leading-relaxed animate-slide-up opacity-0" style={{ animationDelay: "0.6s", animationFillMode: "forwards" }}>
-            Más de 25 años garantizando el abastecimiento de combustibles, GLP y lubricantes con los más altos estándares de calidad y seguridad.
+            Más de 40 años garantizando el abastecimiento de combustibles, GLP y lubricantes con los más altos estándares de calidad y seguridad.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 pt-4 animate-slide-up opacity-0" style={{ animationDelay: "0.8s", animationFillMode: "forwards" }}>
