@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { MapContainer, TileLayer, GeoJSON, Marker, Popup, useMap } from 'react-leaflet';
+import { MapContainer, TileLayer, GeoJSON, Marker, Popup, useMap, useMapEvents } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import { stations } from '../data/stations';
@@ -23,6 +23,63 @@ const customIcon = new L.Icon({
     popupAnchor: [1, -34],
     shadowSize: [41, 41]
 });
+
+// Define small custom icon for low zoom levels
+const smallIcon = new L.Icon({
+    iconUrl: markerIcon,
+    iconRetinaUrl: markerIcon2x,
+    shadowUrl: markerShadow,
+    iconSize: [15, 25], // Smaller size approx 60%
+    iconAnchor: [7, 25],
+    popupAnchor: [1, -20],
+    shadowSize: [25, 25]
+});
+
+// Component to handle markers and their sizing based on zoom
+function MarkersLayer() {
+    const map = useMap();
+    const [currentZoom, setCurrentZoom] = useState(map.getZoom());
+
+    useMapEvents({
+        zoomend: () => {
+            setCurrentZoom(map.getZoom());
+        }
+    });
+
+    // Threshold for switching icon sizes
+    const ZOOM_THRESHOLD = 7;
+    const activeIcon = currentZoom < ZOOM_THRESHOLD ? smallIcon : customIcon;
+
+    return (
+        <>
+            {stations.map((station) => (
+                <Marker
+                    key={station.id}
+                    position={[station.lat, station.lng]}
+                    icon={activeIcon}
+                >
+                    <Popup className="station-popup">
+                        <div className="p-2 min-w-[200px]">
+                            <h3 className="font-bold text-lg mb-1">{station.name}</h3>
+                            <p className="text-sm text-gray-600 mb-2">{station.address}</p>
+                            <div className="flex flex-wrap gap-1 mb-3">
+                                <span className="text-xs bg-gray-100 px-2 py-0.5 rounded text-gray-600 uppercase">{station.department}</span>
+                            </div>
+                            <a
+                                href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(station.address + ', Peru')}`}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="block w-full text-center bg-blue-600 hover:bg-blue-700 !text-white text-sm font-medium py-2 rounded transition-colors"
+                            >
+                                Ver en Google Maps
+                            </a>
+                        </div>
+                    </Popup>
+                </Marker>
+            ))}
+        </>
+    );
+}
 
 // Component to handle map bounds and animations
 function MapController() {
@@ -129,31 +186,7 @@ export function PeruStationsMap() {
                 )}
 
                 {/* Stations Markers */}
-                {stations.map((station) => (
-                    <Marker
-                        key={station.id}
-                        position={[station.lat, station.lng]}
-                        icon={customIcon}
-                    >
-                        <Popup className="station-popup">
-                            <div className="p-2 min-w-[200px]">
-                                <h3 className="font-bold text-lg mb-1">{station.name}</h3>
-                                <p className="text-sm text-gray-600 mb-2">{station.address}</p>
-                                <div className="flex flex-wrap gap-1 mb-3">
-                                    <span className="text-xs bg-gray-100 px-2 py-0.5 rounded text-gray-600 uppercase">{station.department}</span>
-                                </div>
-                                <a
-                                    href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(station.address + ', Peru')}`}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="block w-full text-center bg-blue-600 hover:bg-blue-700 !text-white text-sm font-medium py-2 rounded transition-colors"
-                                >
-                                    Ver en Google Maps
-                                </a>
-                            </div>
-                        </Popup>
-                    </Marker>
-                ))}
+                <MarkersLayer />
             </MapContainer>
         </div>
     );
