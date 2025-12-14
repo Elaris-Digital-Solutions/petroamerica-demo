@@ -17,8 +17,8 @@ export function PageHero({ title, subtitle, image, className, children }: PageHe
                 className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat animate-slow-zoom"
                 style={{ backgroundImage: `url(${image})` }}
             >
-                <div className="absolute inset-0 bg-corporate-navy/60 mix-blend-multiply" />
-                <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-80" />
+                <div className="absolute inset-0 bg-gradient-to-r from-corporate-navy/90 via-corporate-navy/40 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-90" />
             </div>
 
             {/* Content */}
