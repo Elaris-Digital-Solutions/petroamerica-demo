@@ -18,7 +18,7 @@ export default function Estaciones() {
     const filteredStations = stations.filter(station => {
         const matchesSearch = station.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
             station.address.toLowerCase().includes(searchTerm.toLowerCase());
-        const matchesRegion = selectedRegion === "all" || station.region === selectedRegion;
+        const matchesRegion = selectedRegion === "all" || station.department === selectedRegion;
         return matchesSearch && matchesRegion;
     });
 
@@ -70,10 +70,10 @@ export default function Estaciones() {
                             >
                                 <div className="flex justify-between items-start mb-3">
                                     <h3 className="font-bold text-corporate-navy group-hover:text-secondary text-lg transition-colors">{station.name}</h3>
-                                    {station.status === 'open' ? (
-                                        <Badge variant="outline" className="text-emerald-600 border-emerald-200 bg-emerald-50 px-2 py-0.5">Abierto</Badge>
-                                    ) : (
+                                    {station.status === 'maintenance' ? (
                                         <Badge variant="outline" className="text-orange-600 border-orange-200 bg-orange-50 px-2 py-0.5">Mantenimiento</Badge>
+                                    ) : (
+                                        <Badge variant="outline" className="text-emerald-600 border-emerald-200 bg-emerald-50 px-2 py-0.5">Abierto</Badge>
                                     )}
                                 </div>
                                 <div className="flex items-start gap-2.5 text-sm text-muted-foreground mb-4">

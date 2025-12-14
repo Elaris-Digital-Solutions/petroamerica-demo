@@ -6,6 +6,7 @@ export interface Station {
   lat: number;
   lng: number;
   services?: string[];
+  status?: 'open' | 'maintenance';
 }
 
 export const stations: Station[] = [
