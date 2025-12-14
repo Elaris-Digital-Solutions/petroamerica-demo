@@ -55,7 +55,7 @@ export default function BlogDetalle() {
                         </div>
 
                         <div className="prose prose-lg prose-blue max-w-none text-muted-foreground">
-                            {article.content}
+                            <div dangerouslySetInnerHTML={{ __html: article.content || '' }} />
                         </div>
 
                         {/* Share */}
