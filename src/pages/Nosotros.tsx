@@ -1,7 +1,7 @@
 import { PageLayout } from "@/components/layout/PageLayout";
 import { PageHero } from "@/components/layout/PageHero";
 import { Users, Award, Target, Eye, Heart, CheckCircle2 } from "lucide-react";
-import heroImage from "@/assets/about-building.jpg";
+import heroImage from "@/assets/about-building.png";
 
 export default function Nosotros() {
     return (

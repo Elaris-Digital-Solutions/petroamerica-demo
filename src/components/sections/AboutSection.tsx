@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import aboutImage from "@/assets/about-building.jpg";
+import aboutImage from "@/assets/about-building.png";
 
 export function AboutSection() {
   return (

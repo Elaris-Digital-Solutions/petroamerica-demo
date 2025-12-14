@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Briefcase, TrendingUp, Users, Heart, Upload } from "lucide-react";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import heroImg from "@/assets/about-building.jpg";
+import heroImg from "@/assets/about-building.png";
 
 export default function Trabaja() {
     return (
